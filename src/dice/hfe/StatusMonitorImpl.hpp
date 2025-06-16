@@ -7,7 +7,7 @@ namespace dice::hfe
 	class StatusMonitorImpl
 	{
 	public:
-		virtual ~StatusMonitorImpl() = 0;
+		virtual ~StatusMonitorImpl() = default;
 		virtual void shouldUpdate(bool) = 0;
 		virtual void clearScreen() = 0;
 		virtual void getDimensions(int32_t*, int32_t*) = 0;
