@@ -158,7 +158,7 @@ bool BF2EngineSetup::initLateModules()
 bool BF2EngineSetup::initFileSystem()
 {
 	// TODO: Implement
-	return false;
+	return true;
 }
 
 // bf2: 004deff0
