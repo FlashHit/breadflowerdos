@@ -34,7 +34,7 @@ namespace dice::hfe
 		virtual void reportToFile(const std::string&) override;
 		virtual ~Profiler();
 	};
-#if defined(WIN32)
+#if defined(_WIN32)
 	// TODO: Win32 static_assert
 #else
 	static_assert(sizeof(Profiler) == 0x2278);	  // bf2: 0084d663

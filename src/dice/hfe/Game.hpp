@@ -137,7 +137,7 @@ namespace dice::hfe
 
 	extern Game* g_game;
 
-#if defined(WIN32)
+#if defined(_WIN32)
 	// TODO: Win32 static_assert
 #else
 	static_assert(sizeof(Game) == 0x80);

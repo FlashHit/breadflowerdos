@@ -25,7 +25,7 @@ namespace dice::hfe
 
 		bool initLogFiles();
 	};
-#if defined(WIN32)
+#if defined(_WIN32)
 	// TODO: Win32 static_assert
 #else
 	static_assert(sizeof(BF2Log) == 0x40);	  // bf2: 004dcf37

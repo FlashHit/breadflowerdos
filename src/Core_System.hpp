@@ -1,7 +1,7 @@
 #pragma once
 #include <ctime>
 
-#if defined(WIN32)
+#if defined(_WIN32)
 struct timeval
 {
 	long int tv_sec;

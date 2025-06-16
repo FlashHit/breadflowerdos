@@ -18,7 +18,7 @@ namespace dice::hfe::io
 		unsigned int m_minBitSize;
 	};
 
-#if defined(WIN32)
+#if defined(_WIN32)
 	// TODO: Win32 static_assert
 #else
 	static_assert(sizeof(NetworkableDescriptor) == 0x30);

@@ -41,7 +41,7 @@ namespace dice::hfe::io
 	};
 
 	extern SettingsManagerBase* g_settingsManager;
-#if defined(WIN32)
+#if defined(_WIN32)
 // TODO: Win32 static_assert
 #else
 	static_assert(sizeof(SettingsManagerBase) == 0x2a0);	// bf2: 007a51ca
