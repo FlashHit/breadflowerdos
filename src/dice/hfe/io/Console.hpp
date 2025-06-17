@@ -16,7 +16,10 @@ namespace dice::hfe::io
 		bool m_active;
 
 	public:
-		Console() : m_active(false) {}
+		Console() :
+			m_active(false)
+		{
+		}
 
 		virtual ~Console() = default;
 		virtual void setConsoleCompiler(ConsoleCompiler*) = 0;
