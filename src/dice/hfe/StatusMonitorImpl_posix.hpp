@@ -24,6 +24,5 @@ namespace dice::hfe
 #if defined(_WIN32)
 #else
 	static_assert(sizeof(StatusMonitorImpl_posix) == 0x20);
-	static_assert(offsetof(StatusMonitorImpl_posix, m_unknown10) == 0x10);
 #endif
 }	 // namespace dice::hfe
