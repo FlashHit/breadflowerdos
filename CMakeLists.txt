@@ -28,6 +28,8 @@ if (MSVC)
 else()
     # additional warnings
     add_compile_options(-Wall -Wextra -Wpedantic)
+    # disable irrelevant warnings for all the static offsetof asserts.
+    add_compile_options(-Wno-invalid-offsetof)
 endif()
 
 if (BUILD_2142)
