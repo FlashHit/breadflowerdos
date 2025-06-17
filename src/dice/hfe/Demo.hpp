@@ -10,10 +10,10 @@ namespace dice::hfe
 	class Demo : public IEventListener
 	{
 	private:
-		uint64_t m_unknown08;
-		uint64_t m_unknown10;
-		uint64_t m_unknown18;
-		uint8_t m_unknown20;
+		[[maybe_unused]] uint64_t m_unknown08;
+		[[maybe_unused]] uint64_t m_unknown10;
+		[[maybe_unused]] uint64_t m_unknown18;
+		[[maybe_unused]] uint8_t m_unknown20;
 
 	public:
 		Demo();

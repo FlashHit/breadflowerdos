@@ -60,7 +60,7 @@ ModuleIO* ModuleIO::queryInterface(uint32_t p_param)
 	return nullptr;
 }
 
-void ModuleIO::getClassList(std::vector<ClassRegInfo>& regInfos)
+void ModuleIO::getClassList([[maybe_unused]] std::vector<ClassRegInfo>& regInfos)
 {
 	// TODO: Implement
 	/*

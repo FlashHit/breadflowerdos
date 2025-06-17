@@ -167,13 +167,15 @@ bool OldConsole::addConstant(const std::string&, const std::string&)
 const std::string& OldConsole::listVariables(const std::string&)
 {
 	// TODO: Implement
-	return "";
+	static const std::string empty = "";
+	return empty;
 }
 
 const std::string& OldConsole::listConstants(const std::string&)
 {
 	// TODO: Implement
-	return "";
+	static const std::string empty = "";
+	return empty;
 }
 
 void OldConsole::setEchoErrors(bool)
@@ -256,7 +258,8 @@ bool OldConsole::getAllowMultipleFileLoad() const
 const std::string& OldConsole::getWorkingPath() const
 {
 	// TODO: Implement
-	return "";
+	static const std::string empty = "";
+	return empty;
 }
 
 void OldConsole::setWorkingPath(const std::string&)
@@ -267,13 +270,15 @@ void OldConsole::setWorkingPath(const std::string&)
 const std::string& OldConsole::getWorkingFile() const
 {
 	// TODO: Implement
-	return "";
+	static const std::string empty = "";
+	return empty;
 }
 
 const std::string& OldConsole::getWorkingFileAndLine() const
 {
 	// TODO: Implement
-	return "";
+	static const std::string empty = "";
+	return empty;
 }
 
 void OldConsole::setAccess(int32_t)

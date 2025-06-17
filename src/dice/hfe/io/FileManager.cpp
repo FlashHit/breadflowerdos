@@ -297,7 +297,8 @@ bool FileManager::hasMountedArchives() const
 const std::string& FileManager::stripModPath(const std::string&)
 {
 	// TODO: Implement
-	return "";
+	static const std::string empty = "";
+	return empty;
 }
 
 void* FileManager::getPathList() const
@@ -336,11 +337,13 @@ void FileManager::setFileResolveMode(FileResolveMode fileResolveMode)
 const std::string& FileManager::fileExistsEx(const std::string&, bool)
 {
 	// TODO: Implement
-	return "";
+	static const std::string empty = "";
+	return empty;
 }
 
 const std::string& FileManager::fileExistsEx2(const std::string&)
 {
 	// TODO: Implement
-	return "";
+	static const std::string empty = "";
+	return empty;
 }

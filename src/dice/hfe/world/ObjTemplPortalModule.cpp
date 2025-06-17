@@ -56,7 +56,7 @@ ObjTemplPortalModule* ObjTemplPortalModule::queryInterface(uint32_t iid)
 	return nullptr;
 }
 
-void ObjTemplPortalModule::getClassList(std::vector<ClassRegInfo>& regInfos)
+void ObjTemplPortalModule::getClassList([[maybe_unused]] std::vector<ClassRegInfo>& regInfos)
 {
 	// TODO: Implement
 	/*
@@ -71,7 +71,7 @@ void ObjTemplPortalModule::getClassList(std::vector<ClassRegInfo>& regInfos)
 }
 
 void ObjTemplPortalModule::getSingletonList(
-	std::vector<SingletonRegInfo>& regInfos)
+	[[maybe_unused]] std::vector<SingletonRegInfo>& regInfos)
 {
 	// TODO: Implement
 	/*

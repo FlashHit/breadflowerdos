@@ -55,7 +55,7 @@ NetworkModule* NetworkModule::queryInterface(uint32_t iid)
 	return nullptr;
 }
 
-void NetworkModule::getClassList(std::vector<ClassRegInfo>& regInfos)
+void NetworkModule::getClassList([[maybe_unused]] std::vector<ClassRegInfo>& regInfos)
 {
 	// TODO: Implement
 	/*
@@ -69,7 +69,7 @@ void NetworkModule::getClassList(std::vector<ClassRegInfo>& regInfos)
 	 */
 }
 
-void NetworkModule::getSingletonList(std::vector<SingletonRegInfo>& regInfos)
+void NetworkModule::getSingletonList([[maybe_unused]] std::vector<SingletonRegInfo>& regInfos)
 {
 	// TODO: Implement
 	/*

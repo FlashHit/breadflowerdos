@@ -1,4 +1,5 @@
 #include "Module.hpp"
+#include "PlayerManager.hpp"
 
 using namespace dice::hfe::world;
 
@@ -59,7 +60,7 @@ void Module::getClassList([[maybe_unused]] std::vector<ClassRegInfo>& regInfos)
 {
 }
 
-void Module::getSingletonList(std::vector<SingletonRegInfo>& regInfos)
+void Module::getSingletonList([[maybe_unused]] std::vector<SingletonRegInfo>& regInfos)
 {
 	// TODO: Implement
 	/*
@@ -75,13 +76,13 @@ void Module::getSingletonList(std::vector<SingletonRegInfo>& regInfos)
 	 * IID_IObjectTemplateManager, CID_ObjectTemplateManager, 1);
 
 	 * regInfos.push_back(regInfo);
-	}
+	}*/
 	{
 		auto regInfo =
-	 * SINGLETON_REG_INFO("PlayerManager", g_playerManager, IID_IPlayerManager,
-	 * CID_PlayerManager, 1);
+			SINGLETON_REG_INFO("PlayerManager", g_playerManager, IID_IPlayerManager, CID_PlayerManager, 1);
 		regInfos.push_back(regInfo);
 	}
+	/*
 	{
 
 	 * auto regInfo = SINGLETON_REG_INFO("WindManager", g_windManager,

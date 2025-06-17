@@ -56,7 +56,7 @@ SpawnSystemModule* SpawnSystemModule::queryInterface(uint32_t iid)
 	return nullptr;
 }
 
-void SpawnSystemModule::getClassList(std::vector<ClassRegInfo>& regInfos)
+void SpawnSystemModule::getClassList([[maybe_unused]] std::vector<ClassRegInfo>& regInfos)
 {
 	// TODO: Implement
 	/*

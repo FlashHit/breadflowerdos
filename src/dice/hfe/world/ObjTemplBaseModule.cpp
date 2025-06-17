@@ -56,7 +56,7 @@ ObjTemplBaseModule* ObjTemplBaseModule::queryInterface(uint32_t iid)
 	return nullptr;
 }
 
-void ObjTemplBaseModule::getClassList(std::vector<ClassRegInfo>& regInfos)
+void ObjTemplBaseModule::getClassList([[maybe_unused]] std::vector<ClassRegInfo>& regInfos)
 {
 	// TODO: Implement
 	/*

@@ -14,7 +14,7 @@ dice::hfe::StatusMonitorImpl_posix::~StatusMonitorImpl_posix()
 {
 }
 
-void dice::hfe::StatusMonitorImpl_posix::shouldUpdate(bool p_ShouldUpdate)
+void dice::hfe::StatusMonitorImpl_posix::shouldUpdate([[maybe_unused]] bool p_ShouldUpdate)
 {
 }
 

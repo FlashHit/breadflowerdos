@@ -94,10 +94,8 @@ namespace dice::hfe
 		}
 
 		virtual MapInfo* getMapInfo(MapInfo*) override;
-		virtual bool
-		localRadioMessage(TargetChannel, const std::string&) override;
-		virtual bool
-		localGameInfoMessage(TargetChannel, const std::string&) override;
+		virtual bool localRadioMessage(TargetChannel, const std::string&) override;
+		virtual bool localGameInfoMessage(TargetChannel, const std::string&) override;
 		virtual void addPlayerInput(const io::PlayerInput&) override;
 
 		virtual int32_t getCurrentInputIndex() override
@@ -106,8 +104,7 @@ namespace dice::hfe
 		}
 
 		virtual void* getObjectFromNetworkableId(const uint16_t&) override;
-		virtual void
-		createAndDestroyObject(const world::IObjectTemplate*) override;
+		virtual void createAndDestroyObject(const world::IObjectTemplate*) override;
 		virtual bool destroyObject(world::IObject*) override;
 		virtual void joinSquad(int32_t) override;
 		virtual void leaveSquad(int32_t) override;
@@ -117,8 +114,7 @@ namespace dice::hfe
 		virtual void makeMeCommander() override;
 		virtual void popNextCommanderApplicant(int32_t) override;
 		virtual const std::string& getSpottedMessage(uint16_t) override;
-		virtual void sendSpottedMessage(
-			world::IPlayer*, uint16_t, Vec2, world::VehicleType) override;
+		virtual void sendSpottedMessage(world::IPlayer*, uint16_t, Vec2, world::VehicleType) override;
 		virtual void callForSpecialist(world::IPlayer*, HudNodeTypes) override;
 		virtual const std::string& getCurrentMapName() const override;
 		virtual const std::string& getCurrentMapGameMode() const override;

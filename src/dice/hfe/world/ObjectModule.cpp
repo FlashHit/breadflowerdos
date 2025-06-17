@@ -55,7 +55,7 @@ ObjectModule* ObjectModule::queryInterface(uint32_t iid)
 	return nullptr;
 }
 
-void ObjectModule::getClassList(std::vector<ClassRegInfo>& regInfos)
+void ObjectModule::getClassList([[maybe_unused]] std::vector<ClassRegInfo>& regInfos)
 {
 	// TODO: Implement
 	/*

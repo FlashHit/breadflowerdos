@@ -3,6 +3,8 @@
 
 using namespace dice::hfe::world;
 
+PlayerManager* dice::hfe::world::g_playerManager = nullptr;
+
 dice::hfe::IBase* PlayerManager::create(uint32_t id, IBase* playerManager)
 {
 	if (playerManager == nullptr)
@@ -87,11 +89,11 @@ void PlayerManager::addPlayer(IPlayer* player)
 	setActivePlayer(player);
 }
 
-void PlayerManager::removePlayer(IPlayer* player) { }
+void PlayerManager::removePlayer([[maybe_unused]] IPlayer* player) { }
 
-void PlayerManager::removePlayerId(int32_t id) { }
+void PlayerManager::removePlayerId([[maybe_unused]] int32_t id) { }
 
-IPlayer* PlayerManager::getPlayerFromName(const std::string& name)
+IPlayer* PlayerManager::getPlayerFromName([[maybe_unused]] const std::string& name)
 {
 	return nullptr;
 }
@@ -122,13 +124,13 @@ IPlayer* PlayerManager::getNextPlayerFromId(int32_t id)
 	return it->second;
 }
 
-IPlayer* PlayerManager::getPlayerFromProfileId(int32_t id)
+IPlayer* PlayerManager::getPlayerFromProfileId([[maybe_unused]] int32_t id)
 {
 	// TODO: Implement
 	return nullptr;
 }
 
-IPlayer* PlayerManager::getPlayerFromIdString(const std::string& name)
+IPlayer* PlayerManager::getPlayerFromIdString([[maybe_unused]] const std::string& name)
 {
 	// TODO: Implement
 	return nullptr;
@@ -167,14 +169,14 @@ std::list<IPlayer*>& PlayerManager::getPlayers()
 std::list<IPlayer*>& PlayerManager::getPlayersSortedByScore()
 {
 	// TODO: Implement
-	auto players = std::list<IPlayer*>();
+	static auto players = std::list<IPlayer*>();
 	return players;
 }
 
 std::list<IPlayer*>& PlayerManager::getPlayersSortedByRank()
 {
 	// TODO: Implement
-	auto players = std::list<IPlayer*>();
+	static auto players = std::list<IPlayer*>();
 	return players;
 }
 
@@ -193,17 +195,17 @@ std::list<IPlayer*>& PlayerManager::getPlayers(int32_t teamId)
 	return m_tempPlayers;
 }
 
-std::list<IPlayer*>& PlayerManager::getPlayersSortedByScore(int32_t teamId)
+std::list<IPlayer*>& PlayerManager::getPlayersSortedByScore([[maybe_unused]] int32_t teamId)
 {
 	// TODO: Implement
-	auto players = std::list<IPlayer*>();
+	static auto players = std::list<IPlayer*>();
 	return players;
 }
 
-std::list<IPlayer*>& PlayerManager::getPlayersSortedByRank(int32_t teamId)
+std::list<IPlayer*>& PlayerManager::getPlayersSortedByRank([[maybe_unused]] int32_t teamId)
 {
 	// TODO: Implement
-	auto players = std::list<IPlayer*>();
+	static auto players = std::list<IPlayer*>();
 	return players;
 }
 
@@ -224,18 +226,18 @@ PlayerManager::getPlayersInSquad(int32_t teamId, int32_t squadId)
 }
 
 std::list<IPlayer*>&
-PlayerManager::getPlayersInSquadSortedByScore(int32_t teamId, int32_t squadId)
+PlayerManager::getPlayersInSquadSortedByScore([[maybe_unused]] int32_t teamId, [[maybe_unused]] int32_t squadId)
 {
 	// TODO: Implement
-	auto players = std::list<IPlayer*>();
+	static auto players = std::list<IPlayer*>();
 	return players;
 }
 
 std::list<IPlayer*>&
-PlayerManager::getPlayersInSquadSortedByRank(int32_t teamId, int32_t squadId)
+PlayerManager::getPlayersInSquadSortedByRank([[maybe_unused]] int32_t teamId, [[maybe_unused]] int32_t squadId)
 {
 	// TODO: Implement
-	auto players = std::list<IPlayer*>();
+	static auto players = std::list<IPlayer*>();
 	return players;
 }
 
@@ -254,7 +256,7 @@ std::list<IPlayer*>& PlayerManager::getTeamSquadLeaders(int32_t teamId)
 	return m_tempPlayers;
 }
 
-void PlayerManager::updatePlayers(float deltaTime)
+void PlayerManager::updatePlayers([[maybe_unused]] float deltaTime)
 {
 	// TODO: Implement
 	/*for (auto& player : m_players)
@@ -281,7 +283,8 @@ void PlayerManager::getPlayerClasses(
 const std::string& PlayerManager::getClassNameFromPlayerClassID(uint32_t) const
 {
 	// TODO: Implement
-	return "";
+	static const std::string empty = "";
+	return empty;
 }
 
 IPlayer* PlayerManager::createPlayer(uint32_t, const std::string&, int32_t)

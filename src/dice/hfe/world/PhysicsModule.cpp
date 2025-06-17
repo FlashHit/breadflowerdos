@@ -55,7 +55,7 @@ PhysicsModule* PhysicsModule::queryInterface(uint32_t iid)
 	return nullptr;
 }
 
-void PhysicsModule::getClassList(std::vector<ClassRegInfo>& regInfos)
+void PhysicsModule::getClassList([[maybe_unused]] std::vector<ClassRegInfo>& regInfos)
 {
 	// TODO: Implement
 	/*
@@ -130,7 +130,7 @@ void PhysicsModule::getClassList(std::vector<ClassRegInfo>& regInfos)
 	*/
 }
 
-void PhysicsModule::getSingletonList(std::vector<SingletonRegInfo>& regInfos)
+void PhysicsModule::getSingletonList([[maybe_unused]] std::vector<SingletonRegInfo>& regInfos)
 {
 	// TODO: Implement
 	/*

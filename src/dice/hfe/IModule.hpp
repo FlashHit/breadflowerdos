@@ -11,5 +11,6 @@ namespace dice::hfe
 	public:
 		virtual bool init() = 0;
 		virtual bool close() = 0;
+		virtual ~IModule() = default; // custom addition
 	};
 }	 // namespace dice::hfe

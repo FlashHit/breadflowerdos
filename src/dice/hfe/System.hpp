@@ -19,10 +19,10 @@ namespace dice::hfe
 		// at wrong offset");
 		uint32_t m_simulationRate;
 		uint64_t m_exactTime;
-		uint64_t m_unknown18;
-		uint8_t m_unknown20;
-		uint32_t m_unknown24;
-		uint32_t m_unknown28;
+		[[maybe_unused]] uint64_t m_unknown18;
+		[[maybe_unused]] uint8_t m_unknown20;
+		[[maybe_unused]] uint32_t m_unknown24;
+		[[maybe_unused]] uint32_t m_unknown28;
 
 	public:
 		System();
