@@ -56,7 +56,7 @@ ModuleGame* ModuleGame::queryInterface(uint32_t p_param)
 	return nullptr;
 }
 
-void ModuleGame::getClassList(std::vector<ClassRegInfo>& regInfos)
+void ModuleGame::getClassList([[maybe_unused]] std::vector<ClassRegInfo>& regInfos)
 {
 	// TODO: Implement
 	/*
@@ -126,7 +126,7 @@ void ModuleGame::getClassList(std::vector<ClassRegInfo>& regInfos)
 	*/
 }
 
-void ModuleGame::getSingletonList(std::vector<SingletonRegInfo>& regInfos)
+void ModuleGame::getSingletonList([[maybe_unused]] std::vector<SingletonRegInfo>& regInfos)
 {
 	// TODO: Implement
 	/*

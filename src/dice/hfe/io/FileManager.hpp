@@ -94,7 +94,7 @@ namespace dice::hfe::io
 
 	extern FileManager* g_fileManager;
 
-#if defined(WIN32)
+#if defined(_WIN32)
 	// TODO: Win32 static_assert
 #else
 	static_assert(sizeof(FileManager) == 0xC0);	   // bf2: 00850493

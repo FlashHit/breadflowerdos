@@ -55,7 +55,7 @@ namespace dice::hfe
 		virtual bool Vec4Exists(const std::string&) override;
 		virtual void Vec4Erase(const std::string&) override;
 	};
-#if defined(WIN32)
+#if defined(_WIN32)
 	// TODO: Win32 static_assert
 #else
 	static_assert(sizeof(SettingsRepostitory) == 0x198);	// bf2: 0074518a

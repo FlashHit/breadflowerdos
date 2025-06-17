@@ -1,4 +1,6 @@
 #include "Game.hpp"
+#include "world/IPlayer.hpp"
+#include "world/PlayerManager.hpp"
 
 using namespace dice::hfe;
 
@@ -54,16 +56,24 @@ void Game::leaveSquad(int32_t)
 	// TODO: Implement
 }
 
-const std::string& Game::listSquadMembers(int32_t, int32_t)
+const std::string& Game::listSquadMembers([[maybe_unused]] int32_t teamId, [[maybe_unused]] int32_t squadId)
 {
-	// TODO: Implement
-	return "";
+	// auto& players = world::g_playerManager->getPlayersInSquad(teamId, squadId);
+
+	// for (auto& player : players)
+	//{
+	//  int32_t playerId = player->getId();
+	//  TODO: Implement
+	//}
+	static const std::string empty = "";
+	return empty;
 }
 
 const std::string& dice::hfe::Game::listSquads(int32_t)
 {
 	// TODO: Implement
-	return "";
+	static const std::string empty = "";
+	return empty;
 }
 
 void Game::changeSquadName(const std::string&, bool)
@@ -84,7 +94,8 @@ void Game::popNextCommanderApplicant(int32_t)
 const std::string& Game::getSpottedMessage(uint16_t)
 {
 	// TODO: Implement
-	return "";
+	static const std::string empty = "";
+	return empty;
 }
 
 void Game::sendSpottedMessage(

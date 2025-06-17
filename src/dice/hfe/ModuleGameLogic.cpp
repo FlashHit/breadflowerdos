@@ -56,7 +56,7 @@ ModuleGameLogic* ModuleGameLogic::queryInterface(uint32_t p_param)
 	return nullptr;
 }
 
-void ModuleGameLogic::getClassList(std::vector<ClassRegInfo>& regInfos)
+void ModuleGameLogic::getClassList([[maybe_unused]] std::vector<ClassRegInfo>& regInfos)
 {
 	// TODO: Implement
 	/*

@@ -88,7 +88,7 @@ namespace dice::hfe
 			virtual void getIsManDown() = 0;
 			virtual void getManDownAtTick() = 0;
 			virtual void setSquadId(unsigned int) = 0;
-			virtual uint32_t getSquadId() = 0;
+			virtual int32_t getSquadId() = 0;
 			virtual void setIsCommander(bool) = 0;
 			virtual void getIsCommander() = 0;
 			virtual void setUAVIsReady(bool) = 0;

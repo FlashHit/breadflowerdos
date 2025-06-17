@@ -35,11 +35,11 @@ namespace dice::hfe
 		{
 		private:
 			std::map<unsigned short, world::IObject*> m_objectMap;	  // 0x08
-			short m_lastNetId;										  // 0x38
-			char _0x3a[0x6];
+			[[maybe_unused]] short m_lastNetId;						  // 0x38
+			[[maybe_unused]] char _0x3a[0x6];
 			std::map<unsigned short, NetworkableDescriptor*>
 				m_descriptorMap;	// 0x40
-			Hash<unsigned int, NetworkableDescriptor*, UIntHashFunc>
+			[[maybe_unused]] Hash<unsigned int, NetworkableDescriptor*, UIntHashFunc>
 				m_descriptorHashMap;	// 0x70
 			std::map<unsigned short, NetworkableDescriptor*>
 				m_staticDescriptrors;	 // 0x88
@@ -48,12 +48,12 @@ namespace dice::hfe
 			std::map<unsigned short, NetworkableDescriptor*> _0xE8;	   // 0xE8
 			uint32_t m_interpolationTime;
 			uint32_t m_extrapolationTime;
-			int m_globalPredictionMode;
-			char _124;
-			char _125[3];
+			[[maybe_unused]] int m_globalPredictionMode;
+			[[maybe_unused]] char _124;
+			[[maybe_unused]] char _125[3];
 			std::map<int, ObjectDescriptor> m_tempIdToDesc;	   // 0x128
-			int _0x158;
-			int _0x15C;
+			[[maybe_unused]] int _0x158;
+			[[maybe_unused]] int _0x15C;
 			std::vector<
 				std::pair<const NetworkableDescriptor*, NetworkableStateMask>>
 				m_stateMasks;	 // 0x160
@@ -68,7 +68,7 @@ namespace dice::hfe
 				EventNode* p_EventNode, void*);
 			virtual ~NetworkManager();
 		};
-#if defined(WIN32)
+#if defined(_WIN32)
 		// TODO: Win32 static_assert
 #else
 		static_assert(sizeof(NetworkManager) == 0x188);

@@ -9,6 +9,12 @@ namespace dice::hfe::io
 		ConsoleCompiler* m_consoleCompiler;
 
 	public:
+		OldConsole() :
+			Console(),
+			m_consoleCompiler(nullptr)
+		{
+		}
+
 		virtual ~OldConsole() = default;
 		virtual void setConsoleCompiler(ConsoleCompiler*) override;
 		virtual void executeLine(

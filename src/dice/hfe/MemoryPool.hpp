@@ -27,7 +27,7 @@ namespace dice::hfe
 		virtual void init(int32_t, int32_t, bool) override;
 		virtual ~MemoryPool();
 	};
-#if defined(WIN32)
+#if defined(_WIN32)
 	// TODO: Win32 static_assert
 #else
 	static_assert(sizeof(MemoryPool) == 0x48);	  // bf2: 0084d6d3

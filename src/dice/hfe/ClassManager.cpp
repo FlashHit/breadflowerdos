@@ -98,7 +98,7 @@ void ClassManager::registerServer(IClassServer* server)
 	}
 }
 
-void ClassManager::unregisterServer(IClassServer* server)
+void ClassManager::unregisterServer([[maybe_unused]] IClassServer* server)
 {
 	// TODO: Implement
 }
@@ -266,13 +266,13 @@ bool ClassManager::getClassInfo(uint32_t id, ClassInfo& info)
 	return false;
 }
 
-bool dice::hfe::ClassManager::getClassInfo(std::string name, ClassInfo& info)
+bool dice::hfe::ClassManager::getClassInfo([[maybe_unused]] std::string name, [[maybe_unused]] ClassInfo& info)
 {
 	// TODO: Implement
 	return false;
 }
 
-void ClassManager::createSingleton(const std::string& name, SingletonInfo& info)
+void ClassManager::createSingleton([[maybe_unused]] const std::string& name, SingletonInfo& info)
 {
 	if ((*info.singleton) != nullptr)
 	{

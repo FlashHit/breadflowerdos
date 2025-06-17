@@ -7,8 +7,6 @@ set(CMAKE_VERBOSE_MAKEFILE OFF)
 project(RefractorBF CXX)
 
 # C++ Defaults
-set(CMAKE_CXX_COMPILER clang++)
-set(CMAKE_C_COMPILER clang)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -30,6 +28,8 @@ if (MSVC)
 else()
     # additional warnings
     add_compile_options(-Wall -Wextra -Wpedantic)
+    # disable irrelevant warnings for all the static offsetof asserts.
+    add_compile_options(-Wno-invalid-offsetof)
 endif()
 
 if (BUILD_2142)

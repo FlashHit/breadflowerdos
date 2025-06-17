@@ -56,7 +56,7 @@ ModuleNetworkables* ModuleNetworkables::queryInterface(uint32_t iid)
 	return nullptr;
 }
 
-void ModuleNetworkables::getClassList(std::vector<ClassRegInfo>& regInfos)
+void ModuleNetworkables::getClassList([[maybe_unused]] std::vector<ClassRegInfo>& regInfos)
 {
 	// TODO: Implement
 	/*

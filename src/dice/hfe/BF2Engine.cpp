@@ -45,20 +45,20 @@ BF2Engine::BF2Engine(BF2* p_BF2Instance) :
 
 BF2Engine::~BF2Engine() { }
 
-void BF2Engine::filterGameInput(dice::hfe::io::GameInput* p_GameInput)
+void BF2Engine::filterGameInput([[maybe_unused]] dice::hfe::io::GameInput* p_GameInput)
 {
 	// TODO: Implement
 }
 
 // bf2: 004d38a0
-void BF2Engine::filterPlayerInput(dice::hfe::io::PlayerInput* p_PlayerInput)
+void BF2Engine::filterPlayerInput([[maybe_unused]] dice::hfe::io::PlayerInput* p_PlayerInput)
 {
 	// TODO: Implement
 }
 
 // bf2: 004dd790
 void BF2Engine::handleEvent(
-	EventCategory p_Category, uint32_t p_Unknown, EventNode* p_EventNode, void*)
+	EventCategory p_Category, [[maybe_unused]] uint32_t p_Unknown, [[maybe_unused]] EventNode* p_EventNode, void*)
 {
 	// TODO: Implement
 	if (p_Category != EventCategory::ECCore)
@@ -1067,7 +1067,7 @@ void BF2Engine::quitNextFrame()
 }
 
 // bf2: 004d3960
-void BF2Engine::updateStatusMonitor(bool p_Param)
+void BF2Engine::updateStatusMonitor([[maybe_unused]] bool p_Param)
 {
 	if (m_statusMonitor == nullptr)
 		return;

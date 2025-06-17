@@ -106,7 +106,7 @@ namespace dice::hfe
 		bool getClassInfo(std::string name, ClassInfo& info);
 		void createSingleton(const std::string& name, SingletonInfo& info);
 	};
-#if defined(WIN32)
+#if defined(_WIN32)
 	// TODO: Win32 static_assert
 #else
 	static_assert(sizeof(ClassManager) == 0xf0);	// bf2: 004d406c

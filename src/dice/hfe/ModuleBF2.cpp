@@ -1,4 +1,5 @@
 #include "ModuleBF2.hpp"
+#include "world/PlayerManager.hpp"
 
 using namespace dice::hfe;
 
@@ -55,7 +56,7 @@ ModuleBF2* ModuleBF2::queryInterface(uint32_t p_param)
 	return nullptr;
 }
 
-void ModuleBF2::getClassList(std::vector<ClassRegInfo>& regInfos)
+void ModuleBF2::getClassList([[maybe_unused]] std::vector<ClassRegInfo>& regInfos)
 {
 	// TODO: Implement
 	/*
@@ -65,13 +66,11 @@ void ModuleBF2::getClassList(std::vector<ClassRegInfo>& regInfos)
  regInfos.push_back(regInfo);
 
 	 * }
-	{
-		auto regInfo = ClassRegInfo(world::CID_PlayerManager,
-	 * "dice.hfe.world.PlayerManager.Standard", world::PlayerManager::create);
-
-	 * regInfos.push_back(regInfo);
-	}
 	*/
+	{
+		auto regInfo = ClassRegInfo(world::CID_PlayerManager, "dice.hfe.world.PlayerManager.Standard", world::PlayerManager::create);
+		regInfos.push_back(regInfo);
+	}
 }
 
 // bf2: 008ac450

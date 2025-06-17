@@ -101,7 +101,8 @@ const std::string& FileChangeManager::addListener(
 
 	if (fileName.empty())
 	{
-		return "";
+		static const std::string empty = "";
+		return empty;
 	}
 
 	/*g_fileManager->fileExistsEx(fileName, false);

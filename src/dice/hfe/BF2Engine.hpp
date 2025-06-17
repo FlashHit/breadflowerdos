@@ -90,9 +90,9 @@ namespace dice::hfe
 	};
 
 	extern BF2Engine* g_bf2Engine;
-	static void bf2ExitCallback(void*);
-	static void initSettingsRepostitory();
-#if defined(WIN32)
+	[[maybe_unused]] static void bf2ExitCallback(void*);
+	[[maybe_unused]] static void initSettingsRepostitory();
+#if defined(_WIN32)
 	// TODO
 #else
 	#if defined(BF_2142)

@@ -60,7 +60,7 @@ namespace dice::hfe::io
 
 	extern FileChangeManager* g_fileChangeManager;
 
-#if defined(WIN32)
+#if defined(_WIN32)
 // TODO: Win32 static_assert
 #else
 	static_assert(sizeof(FileChangeManager) == 0x88);	 // bf2: 00850503

@@ -74,7 +74,10 @@ namespace dice::hfe::world
 		virtual bool renamePlayer(IPlayer*, std::string) override;
 		virtual ~PlayerManager() = default;
 	};
-#if defined(WIN32)
+
+	extern PlayerManager* g_playerManager;
+
+#if defined(_WIN32)
 	// TODO: Win32 static_assert
 #else
 	static_assert(sizeof(PlayerManager) == 0x100);	  // bf2: 008add03

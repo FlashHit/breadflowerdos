@@ -59,7 +59,7 @@ namespace dice::hfe
 		virtual bool unregisterEvent(EventCategory, uint32_t) override;
 		virtual ~EventManager();
 	};
-#if defined(WIN32)
+#if defined(_WIN32)
 	// TODO: Win32 static_assert
 #else
 	static_assert(sizeof(EventManager) == 0x308);	 // bf2: 0084d743

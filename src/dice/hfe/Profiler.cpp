@@ -72,7 +72,7 @@ void Profiler::stopTimer(unsigned int) { }
 
 void Profiler::getTimerIdByName(const char*, unsigned int&) { }
 
-void Profiler::setEnable(bool enable)
+void Profiler::setEnable([[maybe_unused]] bool enable)
 {
 	// m_enabled = enable;
 }

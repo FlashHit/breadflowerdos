@@ -14,16 +14,15 @@ namespace dice::hfe
 
 	public:
 		StatusMonitorImpl_posix();
-		virtual ~StatusMonitorImpl_posix();
-		virtual void shouldUpdate(bool p_ShouldUpdate);
-		virtual void clearScreen();
-		virtual void getDimensions(int32_t*, int32_t*);
-		virtual void outputString(int32_t, int32_t, std::string&);
-		virtual void flushToScreen();
+		virtual ~StatusMonitorImpl_posix() override;
+		virtual void shouldUpdate(bool p_ShouldUpdate) override;
+		virtual void clearScreen() override;
+		virtual void getDimensions(int32_t*, int32_t*) override;
+		virtual void outputString(int32_t, int32_t, std::string&) override;
+		virtual void flushToScreen() override;
 	};
-#if defined(WIN32)
+#if defined(_WIN32)
 #else
 	static_assert(sizeof(StatusMonitorImpl_posix) == 0x20);
-	static_assert(offsetof(StatusMonitorImpl_posix, m_unknown10) == 0x10);
 #endif
 }	 // namespace dice::hfe
