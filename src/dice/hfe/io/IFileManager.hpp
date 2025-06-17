@@ -45,6 +45,6 @@ namespace dice::hfe::io
 		virtual void setFileResolveMode(FileResolveMode) = 0;
 		virtual const std::string& fileExistsEx(const std::string&, bool) = 0;
 		virtual const std::string& fileExistsEx2(const std::string&) = 0;
-		virtual ~IFileManager() = default; // custom addition
+		virtual ~IFileManager() = default;	  // custom addition
 	};
 }	 // namespace dice::hfe::io

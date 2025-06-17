@@ -41,7 +41,7 @@ namespace dice::hfe
 		virtual void Vec4Set(const std::string&, const Vec4&) = 0;
 		virtual bool Vec4Exists(const std::string&) = 0;
 		virtual void Vec4Erase(const std::string&) = 0;
-		virtual ~ISettingsRepostitory() = default; // custom addition
+		virtual ~ISettingsRepostitory() = default;	  // custom addition
 
 		static void createSingleton();
 	};

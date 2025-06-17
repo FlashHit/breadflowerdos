@@ -1,6 +1,6 @@
 #include "Game.hpp"
-#include "world/PlayerManager.hpp"
 #include "world/IPlayer.hpp"
+#include "world/PlayerManager.hpp"
 
 using namespace dice::hfe;
 
@@ -58,12 +58,12 @@ void Game::leaveSquad(int32_t)
 
 const std::string& Game::listSquadMembers([[maybe_unused]] int32_t teamId, [[maybe_unused]] int32_t squadId)
 {
-	//auto& players = world::g_playerManager->getPlayersInSquad(teamId, squadId);
+	// auto& players = world::g_playerManager->getPlayersInSquad(teamId, squadId);
 
-	//for (auto& player : players)
+	// for (auto& player : players)
 	//{
-		// int32_t playerId = player->getId();
-		// TODO: Implement
+	//  int32_t playerId = player->getId();
+	//  TODO: Implement
 	//}
 	static const std::string empty = "";
 	return empty;
