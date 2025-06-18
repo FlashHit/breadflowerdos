@@ -2,9 +2,9 @@
 #include "BF2Engine.hpp"
 #include "ClassManager.hpp"
 #include "MemoryPool.hpp"
+#include "SmartItf.hpp"
 #include "io/NetworkManager.hpp"
 #include "io/io.hpp"
-#include "SmartItf.hpp"
 
 #include "MathModule.hpp"
 #include "Module.hpp"
