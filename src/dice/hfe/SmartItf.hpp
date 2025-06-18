@@ -11,14 +11,20 @@ namespace dice::hfe
 	template <typename T>
 	concept DerivedFromIBase = std::is_base_of<IBase, T>::value;
 
-	template <DerivedFromIBase T, typename U>
+	template <DerivedFromIBase T, uint32_t IID>
 	class SmartItf
 	{
 	public:
 		T* m_class;
-		U m_iid;
+
+		static constexpr uint32_t m_iid = IID;
 
 	public:
+		SmartItf() :
+			m_class(nullptr)
+		{
+		}
+
 		bool create(uint32_t cid)
 		{
 			if (m_class != nullptr)

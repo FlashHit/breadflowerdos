@@ -161,24 +161,24 @@ bool BF2EngineSetup::initFileSystem()
 	// TODO: Implement
 	/*
 	SmartItf<io::IFileSystem, io::IID_IFileSystem> smartFileSystem;
-	if (smartFileSystem->create(io::CID_UnixFileSystem))
+	if (smartFileSystem.create(io::CID_UnixFileSystem))
 	{
 		io::g_fileManager->setBaseSystem(smartFileSystem->m_class);
 	}
 
 	SmartItf<io::IArchiveHandler, io::IID_IArchiveHandler> smartArchiveHandler;
-	if (smartArchiveHandler->create(io::CID_ZipArchiveHandler))
+	if (smartArchiveHandler.create(io::CID_ZipArchiveHandler))
 	{
 		io::g_fileManager->addArchiveHandler(smartArchiveHandler->m_class);
 	}
 
-	if (smartFileSystem->m_class != nullptr)
+	if (smartFileSystem.m_class != nullptr)
 	{
-		smartFileSystem->m_class->release();
+		smartFileSystem.m_class->release();
 	}
-	if (smartArchiveHandler->m_class != nullptr)
+	if (smartArchiveHandler.m_class != nullptr)
 	{
-		smartArchiveHandler->m_class->release();
+		smartArchiveHandler.m_class->release();
 	}
 	*/
 	return true;
