@@ -281,16 +281,6 @@ bool BF2Engine::initLocalization()
 // bf2: 004d37e0
 void BF2Engine::closeLog()
 {
-	// TODO: Implement
-
-	/*
-	if ((long *)this->field39_0xa0 != (long *)0x0) {
-		(**(code
-	 * **)(*(long *)this->field39_0xa0 + 8))();
-	}
-	this->field39_0xa0 =
-	 * 0;
-  */
 	if (m_log != nullptr)
 		delete m_log;
 
@@ -355,8 +345,7 @@ bool BF2Engine::startGame(bool, bool)
 		return true;
 	}
 
-	SingletonRegInfo regInfo =
-		SINGLETON_REG_INFO("Game", g_game, IID_IGame, CID_GameServer, 2);
+	SingletonRegInfo regInfo = SINGLETON_REG_INFO("Game", g_game, IID_IGame, CID_GameServer, 2);
 	g_classManager->registerSingleton(regInfo);
 
 	/*if (!g_game->init())
