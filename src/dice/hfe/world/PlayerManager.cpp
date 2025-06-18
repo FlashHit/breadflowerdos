@@ -89,12 +89,23 @@ void PlayerManager::addPlayer(IPlayer* player)
 	setActivePlayer(player);
 }
 
-void PlayerManager::removePlayer([[maybe_unused]] IPlayer* player) { }
+void PlayerManager::removePlayer([[maybe_unused]] IPlayer* player)
+{
+	// TODO: Implement.
+}
 
-void PlayerManager::removePlayerId([[maybe_unused]] int32_t id) { }
+void PlayerManager::removePlayerId(int32_t id)
+{
+	auto it = m_idToPlayerMap.find(id);
+	if (it != m_idToPlayerMap.end())
+	{
+		m_idToPlayerMap.erase(it);
+	}
+}
 
 IPlayer* PlayerManager::getPlayerFromName([[maybe_unused]] const std::string& name)
 {
+	// TODO: Implement.
 	return nullptr;
 }
 
@@ -126,7 +137,14 @@ IPlayer* PlayerManager::getNextPlayerFromId(int32_t id)
 
 IPlayer* PlayerManager::getPlayerFromProfileId([[maybe_unused]] int32_t id)
 {
-	// TODO: Implement
+	for (auto player : m_players)
+	{
+		if (player->getProfileId() == id)
+		{
+			return player;
+		}
+	}
+
 	return nullptr;
 }
 

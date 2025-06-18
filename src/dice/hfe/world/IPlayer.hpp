@@ -194,8 +194,8 @@ namespace dice::hfe
 			virtual void getParticipateInVoting() = 0;
 			virtual void setTargetOfVote(bool) = 0;
 			virtual void getTargetOfVote() = 0;
-			virtual void getProfileId() = 0;
-			virtual void setProfileId(int) = 0;
+			virtual int32_t getProfileId() = 0;
+			virtual void setProfileId(int32_t) = 0;
 			virtual void setBlurryVision(float, float, float) = 0;
 			virtual void getBlurValue() = 0;
 			virtual void getIsNearGasCloud() = 0;
