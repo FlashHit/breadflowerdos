@@ -93,6 +93,8 @@ IStream* FileManager::open(
 		fileAccess != FileAccess::ReadWrite)
 	{
 		// TODO: Implement
+		m_isLastFileOpenedFromArchive = false;
+		// auto& modPath = stripModPath(fileName);
 		return nullptr;
 	}
 

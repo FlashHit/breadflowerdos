@@ -34,32 +34,24 @@ namespace dice::hfe
 		class NetworkManager : public IEventListener
 		{
 		private:
-			std::map<unsigned short, world::IObject*> m_objectMap;	  // 0x08
-			[[maybe_unused]] short m_lastNetId;						  // 0x38
+			std::map<unsigned short, world::IObject*> m_objectMap; // 0x08
+			[[maybe_unused]] short m_lastNetId; // 0x38
 			[[maybe_unused]] char _0x3a[0x6];
-			std::map<unsigned short, NetworkableDescriptor*>
-				m_descriptorMap;	// 0x40
-			[[maybe_unused]] Hash<unsigned int, NetworkableDescriptor*, UIntHashFunc>
-				m_descriptorHashMap;	// 0x70
-			std::map<unsigned short, NetworkableDescriptor*>
-				m_staticDescriptrors;	 // 0x88
-			std::map<unsigned short, NetworkableDescriptor*>
-				m_scopableDescriptors;								   // 0xB8
-			std::map<unsigned short, NetworkableDescriptor*> _0xE8;	   // 0xE8
+			std::map<unsigned short, NetworkableDescriptor*> m_descriptorMap; // 0x40
+			[[maybe_unused]] Hash<unsigned int, NetworkableDescriptor*, UIntHashFunc> m_descriptorHashMap; // 0x70
+			std::map<unsigned short, NetworkableDescriptor*> m_staticDescriptrors; // 0x88
+			std::map<unsigned short, NetworkableDescriptor*> m_scopableDescriptors; // 0xB8
+			std::map<unsigned short, NetworkableDescriptor*> _0xE8; // 0xE8
 			uint32_t m_interpolationTime;
 			uint32_t m_extrapolationTime;
 			[[maybe_unused]] int m_globalPredictionMode;
 			[[maybe_unused]] char _124;
 			[[maybe_unused]] char _125[3];
-			std::map<int, ObjectDescriptor> m_tempIdToDesc;	   // 0x128
+			std::map<int, ObjectDescriptor> m_tempIdToDesc; // 0x128
 			[[maybe_unused]] int _0x158;
 			[[maybe_unused]] int _0x15C;
-			std::vector<
-				std::pair<const NetworkableDescriptor*, NetworkableStateMask>>
-				m_stateMasks;	 // 0x160
-			std::list<std::list<
-				std::pair<INetworkableObject*, NetworkableDescriptor*>>>
-				m_scopableRootDescriptors;	  // 0x178
+			std::vector<std::pair<const NetworkableDescriptor*, NetworkableStateMask>> m_stateMasks; // 0x160
+			std::list<std::list<std::pair<INetworkableObject*, NetworkableDescriptor*>>> m_scopableRootDescriptors; // 0x178
 
 		public:
 			NetworkManager();

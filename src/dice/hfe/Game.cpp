@@ -24,9 +24,10 @@ bool Game::localGameInfoMessage(TargetChannel, const std::string&)
 	return true;
 }
 
-void Game::addPlayerInput(const io::PlayerInput&)
+// bf2: 0040f7a0
+void Game::addPlayerInput(const io::PlayerInput& input)
 {
-	// TODO: Implement
+	m_playerInputs.push_back(input);
 }
 
 void* Game::getObjectFromNetworkableId(const uint16_t&)

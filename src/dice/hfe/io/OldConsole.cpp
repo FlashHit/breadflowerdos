@@ -61,8 +61,7 @@ void OldConsole::executeLine(
 
 			// Skip "rcon " prefix when sending data to event manager
 			const char* data = line.c_str() + 5;
-			g_eventManager
-				->postEvent(EventCategory::ECNetwork, 12, (void*)data, 0.f);
+			g_eventManager->postEvent(EventCategory::ECNetwork, 12, (void*)data, 0.f);
 
 			outputStr += "\n";
 		}

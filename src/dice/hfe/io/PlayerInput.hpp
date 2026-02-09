@@ -172,6 +172,6 @@ namespace dice::hfe::io
 		}
 	};
 
-	static_assert(sizeof(PlayerInput) == 0x118);
+	static_assert(sizeof(PlayerInput) == 0x118); // TODO: shouldn't this be 0x128? see bf2: 0040f7bf
 
 }	 // namespace dice::hfe::io

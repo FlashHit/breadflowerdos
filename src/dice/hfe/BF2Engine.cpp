@@ -14,6 +14,10 @@
 #include "ServerSettings.hpp"
 #include "SimpleParser.hpp"
 #include "TickCalculator.hpp"
+#include <algorithm>
+#include <cmath>
+#include <limits>
+#include <numeric>
 #include "io/FileManager.hpp"
 #include "io/OldConsole.hpp"
 #include "io/SettingsManagerBase.hpp"
@@ -83,7 +87,7 @@ bool BF2Engine::init(std::string& launchArgs)
 
 	m_setup = new BF2EngineSetup(this);
 	m_console = new BF2Console();
-	m_unknownAC = 60;
+	m_lockFPS = 60;
 	// systemInfo()->vtable0x38();
 
 	if (!m_setup->initModules())
@@ -98,9 +102,7 @@ bool BF2Engine::init(std::string& launchArgs)
 	g_frameEventManager->registerEventHandler(EventCategory::ECMainMenu, this);
 	g_eventManager->registerEventHandler(EventCategory::UnknownB, this);
 
-	if (m_demo == nullptr ||
-		!g_eventManager
-			 ->registerEventHandler(EventCategory::ECHud, m_demo, 100))
+	if (m_demo == nullptr || !g_eventManager->registerEventHandler(EventCategory::ECHud, m_demo, 100))
 	{
 		BF2_ERROR("Failed to register Demo as event handler for ECHud.");
 	}
@@ -1063,6 +1065,38 @@ void BF2Engine::updateStatusMonitor([[maybe_unused]] bool p_Param)
 
 	// TODO: Implement
 	// StatusMonitor::update(m_statusMonitor, p_Param);
+}
+
+// bf2: 004d3cf0
+float BF2Engine::getAverageFPS() const
+{
+	if (m_frameTimes.empty())
+	{
+		return 0.0f;
+	}
+
+	float sum = std::accumulate(m_frameTimes.begin(), m_frameTimes.end(), 0.0f);
+	float averageFrameTime = sum / static_cast<float>(m_frameTimes.size());
+
+	if (averageFrameTime <= std::numeric_limits<float>::epsilon() && !std::isnan(averageFrameTime))
+	{
+		return floorf(1.5f);
+	}
+
+	return floorf(1.0f / averageFrameTime + 0.5f);
+}
+
+int32_t BF2Engine::getLockFPS() const
+{
+	return m_lockFPS;
+}
+
+void BF2Engine::setLockFPS(int32_t lockFPS)
+{
+	if (lockFPS > 0)
+	{
+		m_lockFPS = lockFPS;
+	}
 }
 
 void dice::hfe::bf2ExitCallback(void* bf2Engine)

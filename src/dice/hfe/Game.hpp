@@ -1,7 +1,9 @@
 #pragma once
 
 #include <cstddef>
+#include <list>
 #include <dice/hfe/IGame.hpp>
+#include <dice/hfe/io/PlayerInput.hpp>
 
 namespace dice::hfe
 {
@@ -50,7 +52,8 @@ namespace dice::hfe
 		MapInfo m_currentMap;
 		char _0x38[0x10];
 		uint32_t m_currentMapSize;
-		char _0x4C[0x1C];
+		char _0x4C[0x4];
+		std::list<io::PlayerInput> m_playerInputs;
 		TargetChannel m_currentChannel;
 		ChannelMessageType m_channelMessageType;
 		int32_t m_currentFlags;
@@ -138,6 +141,7 @@ namespace dice::hfe
 #else
 	static_assert(sizeof(Game) == 0x80);
 	static_assert(offsetof(Game, m_currentMapSize) == 0x48);
+	static_assert(offsetof(Game, m_playerInputs) == 0x50);
 	static_assert(sizeof(MapInfo) == 0x30);
 #endif
 }	 // namespace dice::hfe

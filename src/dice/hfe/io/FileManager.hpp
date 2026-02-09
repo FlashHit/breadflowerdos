@@ -17,8 +17,7 @@ namespace dice::hfe::io
 
 	public:
 		uint32_t m_refCount;
-		std::map<std::string, std::vector<IArchive*>, NoCaseStringCompare>
-			m_archiveMap;
+		std::map<std::string, std::vector<IArchive*>, NoCaseStringCompare> m_archiveMap;
 		IFileSystem* m_baseSystem;
 		std::vector<IArchiveHandler*> m_archiveHandlers;
 		std::list<MergeDirectory> m_mergeDirectories;
@@ -37,44 +36,34 @@ namespace dice::hfe::io
 		virtual uint32_t getRef() override;
 		virtual uint32_t release() override;
 		virtual IBase* queryInterface(uint32_t) override;
+		// virtual void init()
 		virtual bool isLastFileOpenedFromArchive() const override;
-		virtual IStream*
-		open(const std::string&, FileMode, FileAccess, uint32_t) override;
+		virtual IStream* open(const std::string&, FileMode, FileAccess, uint32_t) override;
 		virtual bool fileExists(const std::string&) override;
 		virtual bool deleteFile(const std::string&) override;
 		virtual bool moveFile(const std::string&, const std::string&) override;
-		virtual bool
-		copyFile(const std::string&, const std::string&, bool) override;
-		virtual bool
-		readFile(const std::string&, void*, uint32_t, uint32_t&) override;
-		virtual bool
-		writeFile(const std::string&, const void*, uint32_t, bool) override;
-		virtual uint32_t
-		findFiles(const std::string&, bool, std::list<FileInfo>&) override;
+		virtual bool copyFile(const std::string&, const std::string&, bool) override;
+		virtual bool readFile(const std::string&, void*, uint32_t, uint32_t&) override;
+		virtual bool writeFile(const std::string&, const void*, uint32_t, bool) override;
+		virtual uint32_t findFiles(const std::string&, bool, std::list<FileInfo>&) override;
 		virtual bool getFileInfo(const std::string&, FileInfo&) override;
-		virtual bool
-		compareFileTime(const std::string&, const std::string&) override;
+		virtual bool compareFileTime(const std::string&, const std::string&) override;
 		virtual bool getFullFileName(std::string&) override;
 		virtual void update() override;
 		virtual void getHomeSubstitution() const override;
 		virtual void getRootSubstitution() const override;
 		virtual void setBaseSystem(IFileSystem*) override;
 		virtual IFileSystem* getBaseSystem() override;
-		virtual IStream*
-		openwin32(const std::string&, FileMode, FileAccess, uint32_t) override;
+		virtual IStream* openwin32(const std::string&, FileMode, FileAccess, uint32_t) override;
 		virtual void addArchiveHandler(IArchiveHandler*) override;
 		virtual void removeArchiveHandler(IArchiveHandler*) override;
-		virtual bool
-		addPathOverload(const std::string&, const std::string&) override;
-		virtual bool
-		removePathOverload(const std::string&, const std::string&) override;
-		virtual bool
-		addMergeDirectory(const std::string&, const std::string&) override;
+		virtual bool addPathOverload(const std::string&, const std::string&) override;
+		virtual bool removePathOverload(const std::string&, const std::string&) override;
+		virtual bool addMergeDirectory(const std::string&, const std::string&) override;
 		virtual bool removeMergeDirectory(const std::string&) override;
 		virtual uint32_t openArchive(const std::string&, bool) override;
 		virtual void permitMountArchives(bool) override;
-		virtual IArchive*
-		mountArchive(const std::string&, const std::string&, bool) override;
+		virtual IArchive* mountArchive(const std::string&, const std::string&, bool) override;
 		virtual bool unmountArchive(const std::string&) override;
 		virtual void unmountAllArchives() override;
 		virtual void getAllArchives(std::vector<IArchive*>*) override;
@@ -87,8 +76,7 @@ namespace dice::hfe::io
 		virtual void getWritePath(const std::string&, std::string&) override;
 		virtual FileResolveMode getFileResolveMode() const override;
 		virtual void setFileResolveMode(FileResolveMode) override;
-		virtual const std::string&
-		fileExistsEx(const std::string&, bool) override;
+		virtual const std::string& fileExistsEx(const std::string&, bool) override;
 		virtual const std::string& fileExistsEx2(const std::string&) override;
 	};
 

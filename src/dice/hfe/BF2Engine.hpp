@@ -3,7 +3,9 @@
 #include <cstdint>
 #include <dice/hfe/IEventListener.hpp>
 #include <dice/hfe/io/IInputFilter.hpp>
+#include <dice/hfe/PerformanceLogging.hpp>
 #include <string>
+#include <vector>
 
 namespace dice::hfe
 {
@@ -29,9 +31,7 @@ namespace dice::hfe
 		void* m_unknown38;
 		StatusMonitor* m_statusMonitor;
 		uint32_t m_unknown48;
-		uint64_t m_unknown50;
-		uint64_t m_unknown58;
-		void* m_unknown60;
+		std::vector<float> m_frameTimes;
 		uint32_t m_unknown6C;
 		void* m_unknown70;
 		void* m_unknown78;
@@ -47,10 +47,12 @@ namespace dice::hfe
 		uint32_t m_unknown9C;
 		BF2Log* m_log;
 		uint8_t m_unknownA8[4];
-		uint32_t m_unknownAC;
+		int32_t m_lockFPS;
 		uint8_t m_unknownB0[8];
 		TickCalculator* m_tickCalculator;
-		uint8_t m_unknownC0[72];
+		uint8_t m_unknownC0[8];
+		PerformanceLogging m_performanceLogging;
+		uint8_t m_unknown100[8];
 		Demo* m_demo;
 		uint64_t m_unknown110;
 		uint64_t m_unknown118;
@@ -87,6 +89,9 @@ namespace dice::hfe
 		void quitNextFrame();
 
 		void updateStatusMonitor(bool);
+		float getAverageFPS() const;
+		int32_t getLockFPS() const;
+		void setLockFPS(int32_t);
 	};
 
 	extern BF2Engine* g_bf2Engine;
@@ -104,8 +109,10 @@ namespace dice::hfe
 	#elif defined(BF_2)
 	static_assert(sizeof(BF2Engine) == 0x160);
 	static_assert(offsetof(dice::hfe::BF2Engine, m_bf2) == 0x10);
+	static_assert(offsetof(dice::hfe::BF2Engine, m_frameTimes) == 0x50);
 	static_assert(offsetof(dice::hfe::BF2Engine, m_log) == 0xA0);
 	static_assert(offsetof(dice::hfe::BF2Engine, m_tickCalculator) == 0xB8);
+	static_assert(offsetof(dice::hfe::BF2Engine, m_performanceLogging) == 0xC8);
 	static_assert(offsetof(dice::hfe::BF2Engine, m_demo) == 0x108);
 	#endif
 #endif
