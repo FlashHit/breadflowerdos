@@ -1,7 +1,7 @@
 #pragma once
 
 #include <dice/hfe/ActionBuffer.hpp>
-#include <dice/hfe/IBase.hpp>
+#include <dice/hfe/IPersistant.hpp>
 #include <dice/hfe/Vec3.hpp>
 #include <dice/hfe/WeakPtr.hpp>
 
@@ -23,10 +23,9 @@ namespace dice::hfe
 
 		const uint32_t IID_IPlayer = 0x0C3E6;
 
-		class IPlayer : public IBase
+		class IPlayer : public IPersistant
 		{
 		public:
-			virtual void getClassID() = 0;
 			virtual ~IPlayer() = 0;
 			virtual void getWeakPtr() = 0;
 			virtual void setName(const std::string&) = 0;
